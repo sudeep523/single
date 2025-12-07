@@ -1,0 +1,218 @@
+1) WRITE A MATLAB PROGRAM TO GENERATE UNIT IMPULSE, RAMP,UNIT STEP AND EXPONENTIAL. 
+
+Program:
+
+clc;
+clear;
+close all:
+t = (0/1) / 50
+t * 1 = (- 50/1) / 50 ;
+% generation of unit impulse
+d=[zeros(1,50),1,zeros(1,50)];
+% generation of ramp
+r = 0/50
+% generation of unit step
+s=[zeros(1,50),ones(1,51)];
+% generation of exponential
+e= exp (0.1^ * t);
+subplot(221);
+plot(t1,d);
+title('unit impulse');
+xlabel('time');
+ylabel('magnitude');
+ylim([0,2]);
+subplot(222);
+plot(t,r):
+title('ramp');
+xlabel('time');
+ylabel('magnitude');
+subplot(223);
+plot(tl,s);
+title('unit step');
+xlabel('time');
+ylabel('magnitude');
+ylim([0,2]);
+subplot(224);
+plot(t,e);
+title('exponential');
+xlabel('time');
+ylabel('magnitude');
+
+Output:
+The plots are shown in Fig.1
+
+2) WRITE A MATLAB PROGRAM TO IMPLEMENT FOLDING AND TIME SHIFTING OF A GIVEN SIGNAL.
+
+Program:
+
+clc;
+clear;
+close all;
+t=0:10;
+x=[01210120121];
+% time reversal (folding)
+figure; subplot(211);
+plot(t,x);
+title('x(t)');
+xlabel('Time');
+ylabel('Amplitude');
+axis([-10 10 0 2]);
+y=fliplr(x);
+t1-10:0:
+subplot(212);
+plot(tl,y);
+title('x(-t)');
+xlabel('Time');
+ylabel('Amplitude');
+axis([-10 10 0 2]);
+% time shifting
+figure;
+subplot(311);
+plot(t,x);
+title('x(t)');
+xlabel('Time');
+ylabel('Amplitude');
+axis([-21202]);
+subplot(312);
+plot(t+2,x);
+title('x(t-2)');
+xlabel('Time');
+ylabel('Amplitude');
+axis([-2 12 0 2]);
+subplot(313);
+plot(t-2,x);
+title('x(t+2)');
+xlabel('Time');
+ylabel('Amplitude');
+axis([-2 1202]);
+
+Output:
+The plots are shown in Fig.2.1, Fig.2.2 and Fig.2.3.
+
+3) WRITE A MATLAB PROGRAM TO IMPLEMENT TIME SCALING OF A GIVEN SIGNAL. 
+
+Program:
+
+% time scaling
+1-0:0.01:8*pi;
+x=sin(t);
+figure;
+subplot(311);
+plot(t,x);
+title('x(t)');
+xlim([0,max(t)]);
+xlabel(Time');
+ylabel('Amplitude');
+y=sin(/2);
+subplot(312);
+plot(ty);
+title('x(1/2)');
+xlim([0,max(t)]);
+xlabel(Time');
+ylabel('Amplitude');
+z=sin(t*2);
+subplot(313);
+plot(tz);
+title('x(2t)');
+xlim([0,max(t)]);
+xlabel("Time');
+ylabel('Amplitude');
+
+Output:
+The plots are shown in Fig.2.1, Fig.2.2 and Fig.2.3.
+
+4) WRITE A MATLAB PROGRAM TO GENERATE DISCRETE SINE AND COSINE SIGNALS WITH GIVEN SAMPLING FREQUENCY.  
+
+Program:
+
+clear;
+close all;
+clc;
+tfinal-0.1;
+% signal frequency
+fd=100;
+% sampling frequency
+fs=1000;
+n=0:1/fs:tfinal;
+x1=sin(2*pi*n*fd);
+x2=cos(2*pi*n*fd);
+subplot(211);
+stem(n,xl);
+title('Discrete sine wave');
+xlabel('time');
+ylabel('amplitude');
+subplot(212);
+stem(n,x2);
+title(' Discrete cosine wave');
+xlabel('time');
+ylabel(' amplitude');
+
+Output:
+The plots are shown in Fig.3
+
+5) WRITE A MATLAB PROGRAM TO PERFORM LINEAR CONVOLUTION BETWEEN TWO VECTORS.
+
+Program:
+
+clc;
+clear;
+close all;
+x1=input('Enter the first sequence');
+x2=input('Enter the second sequence');
+yl-conv(x1,x2);
+disp('Linearly Convolved Sequence is');
+disp(y1);
+n=0:length(x1)-1;
+subplot(311);
+stem(n,x1);
+title('First Sequence');
+xlabel('n');
+ylabel('x1(n)'):
+n=0:length(x2)-1;
+subplot(312);
+stem(n,x2);
+title('Second Sequence');
+xlabel(' n');
+ylabel('x2(n)');
+n=0:length(y1)-1;
+subplot(313);
+stem(n,y1);
+title('Linearly Convolved Sequence');
+xlabel('n');
+ylabel('yl(n)');
+
+Output:
+Enter the first sequence[1234]
+Enter the second sequence [25-13]
+Linearly Convolved Sequence is
+2 9 15 24 23 5 12
+The plots are shown in Fig.4.
+
+6) WRITE A MATLAB PROGRAM TO OBTAIN Z-TRANSFORM OF A GIVEN SIGNAL. 
+
+Program:
+clear:
+close all:
+clc:
+syms n;
+% finding z transform
+X1=ztrans(x);
+disp('z tranform of a ^ n * a > 1' ) ;
+disp(X1);
+וייייי a = 2 x = a ^ n a = 0.5 x = a ^ n
+
+X2=ztrans(x);
+disp('z tranform of a^n 0<a<1');
+disp(X2);
+a = 2
+x = l + n
+X3-ztrans(x);
+disp('z tranform of 1+n');
+disp(X3);
+sigl = sin(n)
+disp('z transform of sine signal')
+X4= Ztrans (sigl) ;
+disp(X4);
+sig * 2 = cos(n)
+disp('z transform of cosine signal')
+XS= Ztrans (sig * 2) ;
