@@ -190,29 +190,43 @@ The plots are shown in Fig.4.
 
 6) WRITE A MATLAB PROGRAM TO OBTAIN Z-TRANSFORM OF A GIVEN SIGNAL. 
 
+
 Program:
-clear:
-close all:
+clear;
+close all;
 clc:
 syms n;
 % finding z transform
+a = 2 
+x = a ^ n
 X1=ztrans(x);
-disp('z tranform of a ^ n * a > 1' ) ;
+disp('z tranform of a ^ n * a > 1' ) :
 disp(X1);
-וייייי a = 2 x = a ^ n a = 0.5 x = a ^ n
-
-X2=ztrans(x);
-disp('z tranform of a^n 0<a<1');
+a = 0.5
+x= a ^ n ;
+X2=ztrans(x):
+disp('z tranform of a ^ n * 0 < a < 1' )
 disp(X2);
 a = 2
-x = l + n
-X3-ztrans(x);
+x = I + n
+X3=ztrans(x);
 disp('z tranform of 1+n');
 disp(X3);
 sigl = sin(n)
 disp('z transform of sine signal')
-X4= Ztrans (sigl) ;
+X4-ztrans(sig1);
 disp(X4);
 sig * 2 = cos(n)
-disp('z transform of cosine signal')
-XS= Ztrans (sig * 2) ;
+disp('z transform of cosine signal")
+X5-ztrans(sig2);
+disp(X5);
+
+Output: z tranform of a ^ n * a > 1 z / (z - 2)
+z tranform of a ^ n * 0 < a < 1 z / (z - 1/2)
+z tranform of 1+n z / (z - 1) + z / ((z - 1) ^ 2)
+z transform of sine signal (z^ * sin(1) )/(z^ ^ 2-2^ * cos(1)^ * z+1)
+z transform of cosine signal
+(z^ * (z - cos(1)) )/(z^ ^ 2-2^ * cos(1)^ * z+1)
+
+Result:
+Z-Transform of a given signal are obtained.
