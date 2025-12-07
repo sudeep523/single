@@ -190,8 +190,8 @@ The plots are shown in Fig.4.
 
 6) WRITE A MATLAB PROGRAM TO OBTAIN Z-TRANSFORM OF A GIVEN SIGNAL. 
 
-
 Program:
+
 clear;
 close all;
 clc:
@@ -230,3 +230,118 @@ z transform of cosine signal
 
 Result:
 Z-Transform of a given signal are obtained.
+
+7) WRITE A MATLAB PROGRAM TO OBTAIN INVERSE Z-TRANSFORM OF A GIVEN SYSTEM. 
+
+Program:
+
+clear;
+close all;
+clc;
+syms z;
+Fz =z/(z^ 2-.5^ * z+.06);
+% inverse z-transform
+fn = iztrans(Fz);
+pretty(fn);
+num = 1;
+den [1,-0.5,0.06];
+n = 0:100;
+fn = impulse(num,den, 10);
+% Plot
+subplot(211);
+stem(n,fn);
+grid on;
+title('Discrete Time Sequence ');
+ylabel('f(n)');
+xlabel('n');
+
+Output:
+/ 3 \n
+/ 1 \n
+10|--|-10|-|
+\10/
+\5/
+
+8) WRITE A MATLAB PROGRAM TO DETERMINE IMPULSE RESPONSE OF A GIVEN SYSTEM.
+
+Program:
+
+clc;
+clear;
+close all;
+N=50;
+b=1;
+a=[1,-0.5];
+% To find Impulse Response
+x=[1,zeros(1,N-1)];
+n=0:1:N-1;
+y=filter(b,a,x);
+subplot(211);
+stem(n,x);
+xlabel('n');
+ylabel('u(n)');
+title('Impulse Input');
+subplot(212);
+stem(n.y);
+xlabel('n');
+ylabel('y(n)');
+title('Impulse Response');
+
+Output:
+The plot is shown in Fig. 7.
+
+9) WRITE A MATLAB PROGRAM TO DETERMINE STEP RESPONSE OF A GIVEN SYSTEM. 
+
+Program:
+
+clc;
+clear;
+close all;
+N = 50
+b = 1
+a = [1, - 0.5]
+% To find step Response
+x=[ones(1,N)];
+n = (0/1) / N - 1
+y=filter(b,a,x);
+subplot(211);
+stem(n,x);
+xlabel('n');
+ylabel('u(n)');
+title('Step Input');
+subplot(212);
+stem(n,y);
+xlabel('n');
+ylabel('y(n)');
+title('Step Response');
+
+Output:
+The plot is shown in Fig.8.
+
+10) WRITE A MATLAB PROGRAM TO OBTAIN PARTIAL FRACTION EXPANSION OF A GIVEN EQUATION AND OBTAIN POLE ZERO PLOT.
+
+10 th partial fraction 
+Program:
+
+clc;
+clear;
+close all;
+syms z
+Fz =(z+1)/(z^2 - 5*z + 6);
+P1=partfrac(Fz);
+disp(P1);
+
+Output:
+4/(z-3)-3/(z-2)
+
+10th zero plot
+Program:
+
+clc;
+clear;close all;
+syms z;
+F=(12*z^2-z)/(6*z^2 - z - 1);
+[num,den] = numden(F);
+Ts = 0.1; % Sampling period
+H = tf(sym2poly(num), sym2poly(den), Ts);
+pzmap(H);
